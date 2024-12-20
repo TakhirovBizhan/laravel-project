@@ -33,7 +33,7 @@ class SendStatCommand extends Command
         $article_count = SaveClick::count();
         SaveClick::whereNotNull('id')->delete();
         $comment_count = Comment::whereDate('created_at', Carbon::today())->count();
-        Mail::to('moosbeere_O@mail.ru')->send(new StatMail($article_count, $comment_count));
+        Mail::to('bijantakhirov2004@mail.ru')->send(new StatMail($article_count, $comment_count));
 
     }
 }
